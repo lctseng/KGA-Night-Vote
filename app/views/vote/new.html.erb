@@ -1,0 +1,16 @@
+<div class="wrapper">
+  <%= form_tag create_vote_path, method: :post  do %>
+    <%= label 'ticket_id', "雄友之夜投票系統"%><br>
+    <%= label 'ticket_id', "請輸入票卷上的流水號，包含字母"%><br>
+    <%= text_field_tag 'ticket_id',nil,placeholder: 'AB789' %><br>
+    <%= label 'ticket_id', "請選擇想支持的隊伍"%><br>
+    <div class="team-group">
+      <a class="team-field-link" href="#"><div class="team-field red" data-team="red">紅組</div></a>
+      <a class="team-field-link" href="#"><div class="team-field white" data-team="white">白組</div></a>
+      <%= hidden_field_tag 'team', 'no-select', class: "team-select" %><br>
+      <%= submit_tag "送出", class: "btn btn-primary btn-lg btn-block submit"%>
+    </div>
+  <% end %>
+  <p class="flash"><%= flash[:info] %></p>
+  <p style="font-size: 16px;color: #aaa;">Author: <a href="https://www.facebook.com/computerhenry321">Liang-Chi Tseng (曾亮齊)</a></p>
+</div>

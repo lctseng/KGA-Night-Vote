@@ -1,0 +1,96 @@
+// Place all the styles related to the vote controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.wrapper{
+  margin: auto;
+  text-align: center;
+  font-size: 30px;
+  width: 768px;
+  height: 576px;
+  position: relative;
+  //font-family: 'cwTeXHei', serif;
+}
+.wrapper:after {
+  content : "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url("http://i.imgur.com/ISZaxhk.jpg");
+  background-size: 768px 576px;
+  background-repeat: no-repeat;
+  background-position: top center;
+  width: 100%;
+  height: 100%;
+  opacity : 0.2;
+  z-index: -1;
+}
+.flash{
+  color: red;
+  height: 40px;
+}
+.team-group{
+  width: 300px;
+  margin: auto;
+}
+.team-field{
+  display: inline-block;
+  width: 120px;
+  height: 70px;
+  border: 10px solid #eee;
+  margin: auto;
+  font-weight: bold;
+}
+.team-field-link {
+  text-decoration: none;
+}
+.team-field.red{
+  background-color: #e60000;
+  color: white;
+}
+.team-field.white{
+  background-color: white;
+  color: #e60000;
+}
+.highlight{
+  border: 10px solid #ff9933;
+}
+.submit{
+  height: 70px;
+  margin-top: 20px;
+}
+.counter-group{
+  text-align: center;
+  display: inline-block; 
+  border: 1px solid #000;
+  float: left;
+  width: 250px;
+  font-family: 'cwTeXHei', serif;
+}
+.counter-group.red{
+  color: white;
+  background-color: #e60000;
+}
+.counter-group.white{
+}
+.counter-group h2{
+  font-weight: bold;
+}
+.voter{
+  height: 300px;
+}
+.voter-msg{
+  display:none;
+  font-size: 20px;
+  font-weight: bold;
+}
+@font-face {
+  font-family: 'cwTeXHei';
+  font-style: normal;
+  font-weight: 500;
+  src: url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.eot);
+  src: url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.eot?#iefix) format('embedded-opentype'),
+  url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.woff2) format('woff2'),
+  url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.woff) format('woff'),
+  url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.ttf) format('truetype');
+}
