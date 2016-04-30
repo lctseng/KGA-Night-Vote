@@ -24,3 +24,7 @@
 *.swo
 
 cable.yml
+PassengerAgent.core
+passenger.4000.pid*
+config/environments/development.rb
+Passengerfile.json
