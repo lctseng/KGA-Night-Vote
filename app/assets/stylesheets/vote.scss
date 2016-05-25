@@ -5,8 +5,8 @@
   margin: auto;
   text-align: center;
   font-size: 30px;
-  width: 768px;
-  height: 576px;
+  width: 100%;
+  height: 100%;
   position: relative;
   //font-family: 'cwTeXHei', serif;
 }
@@ -16,7 +16,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  background-image: url("http://i.imgur.com/ISZaxhk.jpg");
+  background-image: url("https://i.imgur.com/ISZaxhk.jpg");
   background-size: 768px 576px;
   background-repeat: no-repeat;
   background-position: top center;
@@ -64,7 +64,8 @@
   display: inline-block; 
   border: 1px solid #000;
   float: left;
-  width: 250px;
+  height: 100%;
+  width: 50%;
   font-family: 'cwTeXHei', serif;
 }
 .counter-group.red{
@@ -73,11 +74,14 @@
 }
 .counter-group.white{
 }
+.counter-group#single {
+  width: 100%;
+}
 .counter-group h2{
   font-weight: bold;
 }
 .voter{
-  height: 300px;
+  height: 650px;
 }
 .voter-msg{
   display:none;

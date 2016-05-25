@@ -23,6 +23,23 @@ module VoteHelper
     ["red","white"].include? team
   end
 
+  def start_voting?
+    start_time = REDIS.get("kga.start_vote_time")
+    if start_time
+      start_time = Time.parse(start_time)
+    else
+      start_time = Time.new(2016,5,25,18,30)
+    end
+    end_time = REDIS.get("kga.end_vote_time")
+    if end_time
+      end_time = Time.parse(end_time)
+    else
+      end_time = Time.new(2016,5,25,20,30)
+    end
+    now = Time.now
+    return now >= start_time && now <= end_time
+  end
+
   # team should be either "red" or "white"
   # assume ticket_id is valid and not voted
   def do_vote(ticket_id,team)
@@ -63,7 +80,7 @@ module VoteHelper
     # FIXME! for test
     arr = []
     676.times do |i|
-      arr << sprintf("AB%03d",i+1)
+      arr << sprintf("%06d",i+1)
     end
     return arr
   end

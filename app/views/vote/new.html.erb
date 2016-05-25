@@ -1,8 +1,8 @@
 <div class="wrapper">
   <%= form_tag create_vote_path, method: :post  do %>
     <%= label 'ticket_id', "雄友之夜投票系統"%><br>
-    <%= label 'ticket_id', "請輸入票卷上的流水號，包含字母"%><br>
-    <%= text_field_tag 'ticket_id',nil,placeholder: 'AB789' %><br>
+    <%= label 'ticket_id', "請輸入票卷上的流水號"%><br>
+    <%= text_field_tag 'ticket_id',nil,placeholder: '完整流水號' %><br>
     <%= label 'ticket_id', "請選擇想支持的隊伍"%><br>
     <div class="team-group">
       <a class="team-field-link" href="#"><div class="team-field red" data-team="red">紅組</div></a>
