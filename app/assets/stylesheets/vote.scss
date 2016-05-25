@@ -10,7 +10,16 @@
   position: relative;
   //font-family: 'cwTeXHei', serif;
 }
-.wrapper:after {
+.vote-wrapper{
+  margin: auto;
+  text-align: center;
+  font-size: 30px;
+  width: 960px;
+  height:  720px;
+  position: relative;
+  //font-family: 'cwTeXHei', serif;
+}
+.vote-wrapper:after {
   content : "";
   display: block;
   position: absolute;
