@@ -10,10 +10,10 @@
     * config/environments/production.rb
     * config/environments/developement.rb
   * 修改處
-  ``
+  ```
   config.action_cable.url
   config.action_cable.allowed_request_origins
-  ``
+  ```
 
 * [Heroku App 測試](https://kga-vote.herokuapp.com/)
 
