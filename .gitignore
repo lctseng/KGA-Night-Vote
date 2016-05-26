@@ -23,8 +23,6 @@
 *.swp
 *.swo
 
-cable.yml
-
 passenger.*.pid*
 PassengerAgent.core
 
