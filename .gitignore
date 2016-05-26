@@ -26,4 +26,3 @@
 passenger.*.pid*
 PassengerAgent.core
 
-/public/assets/application-*
