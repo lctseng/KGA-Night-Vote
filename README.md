@@ -1,24 +1,21 @@
-## README
+## KGA Voting System 雄友之夜投票系統
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Ruby 2.2.4 & Rails 5.0.0.beta3
 
-Things you may want to cover:
+* 需要使用Redis
 
-* Ruby version
+* [Heroku App 測試](https://kga-vote.herokuapp.com/)
 
-* System dependencies
+* 功能
+  * 投票
+    * (root)或/vote/new
 
-* Configuration
+  * 檢視投票結果
+    * 紅組: /vote/red
+    * 白組: /vote/white
+    * 雙方: /vote/result
 
-* Database creation
+  * 控制後台(無存取控制)
+    * /vote/settings
 
-* Database initialization
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
