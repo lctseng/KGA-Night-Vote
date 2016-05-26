@@ -4,6 +4,17 @@
 
 * 需要使用Redis
 
+* 設定
+  * 此系統使用了ActionCable，Deploy時須修改ActionCable相關的設定
+  * 檔案
+    * config/environments/production.rb
+    * config/environments/developement.rb
+  * 修改處
+  ``
+  config.action_cable.url
+  config.action_cable.allowed_request_origins
+  ``
+
 * [Heroku App 測試](https://kga-vote.herokuapp.com/)
 
 * 功能
