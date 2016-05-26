@@ -17,5 +17,7 @@ module KgaVote
       g.test_framework false
       g.helper false
     end
+
+    config.serve_static_assets = true
   end
 end
