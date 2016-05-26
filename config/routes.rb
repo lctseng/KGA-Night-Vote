@@ -3,14 +3,21 @@ Rails.application.routes.draw do
 
   # Serve websocket cable requests in-process
   mount ActionCable.server => '/cable'
-  root 'vote#new'
-  get 'vote/result' => 'vote#result', as: :result
+  root 'votes#new'
+  
+  resource 'vote', only: [:new, :create] do
+    member do
+      get :result
+      get :red, path: 'view_red'
+      get :white, path: 'view_white'
 
-  get 'vote/red' => 'vote#view_red', as: :view_red
-  get 'vote/white' => 'vote#view_white', as: :view_white
+      get :settings, action: 'get_settings'
+      post :settings, action: 'post_settings'
+    end
+  end
+  
 
-  get 'vote/new' => 'vote#new', as: :new_vote
-  post 'vote/create' => 'vote#create', as: :create_vote
+  
 
 
 end

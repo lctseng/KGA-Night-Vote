@@ -28,13 +28,13 @@ module VoteHelper
     if start_time
       start_time = Time.parse(start_time)
     else
-      start_time = Time.new(2016,5,25,18,30)
+      start_time = Time.new(2000,5,25,18,30)
     end
     end_time = REDIS.get("kga.end_vote_time")
     if end_time
       end_time = Time.parse(end_time)
     else
-      end_time = Time.new(2016,5,25,20,30)
+      end_time = Time.new(2020,5,25,20,30)
     end
     now = Time.now
     return now >= start_time && now <= end_time
@@ -47,6 +47,17 @@ module VoteHelper
     REDIS.hset("ticket_info",ticket_id,team)
     # vote it!
     REDIS.incr("vote_result.#{team}")
+  end
+
+  def vote_result_name(name)
+    case name
+    when "red"
+      "紅組"
+    when "white"
+      "白組"
+    else
+      "未投票"
+    end
   end
 
   # ==admin==
@@ -88,7 +99,7 @@ module VoteHelper
   # for testing
   def self.force_vote(team,val = 1)
     REDIS.incrby("vote_result.#{team}",val)
-    VoteResultChannel.send_result({:team => team, :ticket_id => sprintf("AB%03d",rand(999)) } )
+    VoteResultChannel.send_result({:team => team, :ticket_id => sprintf("000%03d",rand(999)) } )
   end
 
   def self.random_voting(count = 100)

@@ -1,0 +1,64 @@
+<div class="container">
+  <h2>投票操作</h2>
+  <%= form_tag settings_vote_path, method: 'post' do %>
+    <%= hidden_field_tag "command", "vote" %>
+    <p><%= number_field_tag "value", session["value"], placeholder: "操作票數" %></p>
+    <%= submit_tag "強制投紅組", class: "btn btn-primary btn-lg" %>
+    <%= submit_tag "強制投白組", class: "btn btn-primary btn-lg" %>
+    <%= submit_tag "隨機投票", class: "btn btn-primary btn-lg" %>
+  <% end %>
+  <h2>重置操作</h2>
+  <%= form_tag settings_vote_path, method: 'post' do %>
+    <%= hidden_field_tag "command", "reset" %>
+    <%= submit_tag "重置全部", class: "btn btn-danger btn-lg"%>
+    <%= submit_tag "票數歸零", class: "btn btn-warning btn-lg"%>
+    <%= submit_tag "清除投票紀錄", class: "btn btn-warning btn-lg"%>
+  <% end %>
+  <h2>設定投票開始時間</h2>
+  <%= form_tag settings_vote_path, method: 'post' do %>
+    <%= hidden_field_tag "command", "time" %>
+    <%= hidden_field_tag "time_type", "start" %>
+    <p>
+    <% if !@start_time %>
+      無設定起始時間，預設為2000-05-25
+    <% end %>
+    </p>
+    <p>
+    <%= datetime_local_field_tag "time", @start_time %>
+    </p>
+    <%= submit_tag "設定", class: "btn btn-primary btn-lg"%>
+    <%= submit_tag "清除", class: "btn btn-warning btn-lg"%>
+  <% end %>
+  <h2>設定投票結束時間</h2>
+  <%= form_tag settings_vote_path, method: 'post' do %>
+    <%= hidden_field_tag "command", "time" %>
+    <%= hidden_field_tag "time_type", "end" %>
+    <p>
+    <% if !@end_time %>
+      無設定結束時間，預設為2020-05-25
+    <% end %>
+    </p>
+    <p>
+    <%= datetime_local_field_tag "time", @end_time %>
+    </p>
+    <%= submit_tag "設定", class: "btn btn-primary btn-lg"%>
+    <%= submit_tag "清除", class: "btn btn-warning btn-lg"%>
+  <% end %>
+
+  <h2>投票紀錄</h2>
+  <table class="table">
+    <tr>
+      <th>流水號</th>
+      <th>投票組別</th>
+    </tr>
+    <% VoteHelper.voting_state.each do |entry| %>
+      <tr>
+        <td><%= entry[0] %></td>
+        <td><%= vote_result_name(entry[1]) %></td>
+      </tr>
+    <% end %>
+  </table>
+
+
+
+</div>
